@@ -1,0 +1,78 @@
+
+
+    
+    
+
+  <div class="container">    
+    <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+        <div class="panel panel-info" >
+                <div class="panel-heading">
+                    <div class="panel-title text-center">News</div>
+                </div>     
+                <div style="padding-top:30px" class="panel-body" >
+                    <img src="assets/images/news.jpg" alt="news" style="width: 200px;height: 100px; margin-right: auto; margin-left: auto; display: block;" />
+                    <br>
+                    <select name="newscat" (change)="selectNews($event)" style="width: 100%;padding: 10px;">
+                        <option value="select">Select Category</option>
+                        <option value="all">All</option>
+                        <option value="business" >Business</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="health">Health</option>
+                        <option value="science">Science</option>
+                        <option value="sports">Sports</option>
+                        <option value="technology">Technology</option>
+                    </select>
+                    </div>  
+                                   
+                </div>  
+    </div>
+    </div>
+    <div *ngIf="isLoading" style="text-align: center;">
+        <img src="./assets/images/loading.gif" style="height: 150px;width:1 50px;">
+    </div>
+    <div class="container" *ngIf="!isLoading" > 
+    <div *ngFor="let list of listNews">
+    <div class="col-md-3 newstab">       
+    <img src="{{list.urlToImage}}" class="img-responsive"/>
+    <h6 style="font-weight: 900;">{{list.title}} </h6>
+    <p>{{list.description|slice:0:50}}... </p>
+    <hr>
+    <a href="{{list.url}}" target="_blank"><button type="button" class="btn-success" >Read More...</button> </a>                   
+    </div>    
+</div> 
+
+<!--div>
+    <div class="col-md-3 newstab">       
+    <img src="assets/images/news2.png" class="img-responsive"/>
+    <h6 style="font-weight: 900;">Title Goes here</h6>
+    <p>a sd sa das d as da sd asd as das d sad asd a</p>
+    <hr>
+    <a href="#" target="_blank"><button type="button" class="btn-success">Read More...</button> </a>                   
+    </div>    
+</div> 
+
+<div>
+    <div class="col-md-3 newstab">       
+    <img src="assets/images/news3.png" class="img-responsive"/>
+    <h6 style="font-weight: 900;">Title Goes here</h6>
+    <p>a sd sa das d as da sd asd as das d sad asd a</p>
+    <hr>
+    <a href="#" target="_blank"><button type="button" class="btn-success">Read More...</button> </a>                   
+    </div>    
+</div> 
+
+<div>
+    <div class="col-md-3 newstab">       
+    <img src="assets/images/news4.jfif" class="img-responsive" style="height: 150px;"/>
+    <h6 style="font-weight: 900;">Title Goes here</h6>
+    <p>a sd sa das d as da sd asd as das d sad asd a</p>
+    <hr>
+    <a href="#" target="_blank"><button type="button" class="btn-success">Read More...</button> </a>                   
+    </div>    
+</div--> 
+   </div>
+
+   <br><br><br><br>
+
+
+  

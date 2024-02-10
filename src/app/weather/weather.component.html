@@ -1,0 +1,36 @@
+
+    
+   
+  <div class="container">    
+    <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+        <div class="panel panel-info" >
+                <div class="panel-heading">
+                    <div class="panel-title text-center">Weather</div>
+                </div>     
+                <div style="padding-top:30px" class="panel-body" >
+                    <img src="assets/images/weather.jpg" alt="news" style="width: 200px;height: 100px; margin-right: auto; margin-left: auto; display: block;" />
+                    <br>
+                    <input type="text" style="width: 100%;padding: 10px;" [(ngModel)]="city" placeholder="Search the city">
+                    <br><br>
+                    <button type="button" class="btn-success" (click)="doSearch()">Search</button>
+                  
+                    </div>                     
+                </div>  
+                <div *ngIf="isLoading" style="text-align: center;" >
+                    <img src="./assets/images/loading.gif" style="height: 50px;width: 50px;">
+                </div>
+                <div *ngIf="details.length!=0">
+                    City : {{details.name}}
+                    <br><br>
+                    Country : {{details.sys.country}}
+                    <br><br>
+                    Temperature :  {{details.main.temp}}
+                    <br><br>
+                    Humidity : {{details.main.humidity}}
+                </div>   
+                <br><br><br><br><br><br><br>
+    </div>
+</div>
+
+
+ 

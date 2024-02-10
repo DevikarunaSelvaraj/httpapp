@@ -1,0 +1,16 @@
+<div id="minfo" style="display:block;">
+    <h2>MOVIE INFORMATION</h2>
+    MOVIE NAME: <input type="text" (blur)="movieInfo($event)">
+    <div *ngIf="isLoading" style="text-align: center;" >
+        <img src="./assets/images/loading.gif" style="height: 50px;width: 50px;">
+    </div>
+    <div *ngIf="details.length!=0 && !isLoading" >
+        <h3>MOVIE DETAILS</h3>
+        <img src="{{details.Poster}}"  style="height: 200px;width: 200px;"><br><br>
+        MOVIE NAME:{{details.Title}} <br><br>
+        ACTORS: {{details.Actors}} <br><br>
+        DIRECTOR:{{details.Writer}} <br><br>
+    </div>
+    <!--div id="load" style="display: none;">
+        <img src="spin.gif" id="loadimg">
+    </div-->
